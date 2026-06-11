@@ -1,5 +1,4 @@
 import { MotionProvider } from "@/components/motion-provider";
-import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TopHeader } from "@/components/top-header";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,7 +6,10 @@ import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
+
+const Navbar = dynamic(() => import("@/components/navbar"), { ssr: false });
 
 const fontSans = FontSans({
   subsets: ["latin"],

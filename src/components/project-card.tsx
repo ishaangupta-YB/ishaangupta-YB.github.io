@@ -114,7 +114,7 @@ export function ProjectCard({
                     ) : (
                       <Globe className="size-3" />
                     )}
-                    {isGithub ? "Source" : "Live Demo"}
+                    {link.type}
                   </Badge>
                 </Link>
               );

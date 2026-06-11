@@ -14,12 +14,9 @@ const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "Ju
 
 // Helper function to parse project dates for sorting (newest first)
 const parseDate = (dateStr: string) => {
-  // Handle "Present" in dates
-  if (dateStr.includes("Present")) {
-    return new Date();
-  }
-
-  // Extract year from various date formats
+  // Extract year from various date formats. Always sort by the start date so
+  // ongoing ("Present") projects are ordered by when they began, not collapsed
+  // to a single "now" timestamp.
   const parts = dateStr.split(" - ");
   const startPart = parts[0].trim();
 

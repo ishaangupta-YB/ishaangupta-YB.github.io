@@ -86,7 +86,6 @@ export const DATA = {
     "GitHub Copilot",
     "Devin",
     "OpenCode",
-    "Devin",
     "Windsurf",
     "CodeRabbit",
   ],
